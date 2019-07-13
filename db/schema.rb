@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_07_13_171840) do
 
   create_table "images", force: :cascade do |t|
     t.text "caption"
-    t.string "rating"
+    t.string "subtitle"
     t.integer "user_id"
     t.integer "place_id"
     t.datetime "created_at", null: false

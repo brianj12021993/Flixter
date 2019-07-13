@@ -5,15 +5,11 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :cost %>
-    <br />
-    <%= f.submit "Create", class: 'btn btn-primary' %>
-    <br />
-    <h2>Add a new image</h2>
-    <%= simple_form_for @course, url: instructor_courses_path do |f| %>
     <%= f.input :image %>
-    <%= f.input :caption %>
     <br />
     <%= f.submit "Create", class: 'btn btn-primary' %>
+    <br />
+  
     <br />
   <% end %>
   <br />
