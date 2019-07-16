@@ -18,6 +18,7 @@ class LessonsController < ApplicationController
     	if current_lesson.user != current_user
       		redirect_to_course_sections, alert: 'Error Message Here'
     	end
+      end
   	end
 
   	helper_method :current_lesson
