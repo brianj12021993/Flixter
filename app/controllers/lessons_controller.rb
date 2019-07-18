@@ -16,7 +16,7 @@ class LessonsController < ApplicationController
 
   	def require_authorized_for_current_lesson
     	if current_lesson.user != current_user
-      		redirect_to_course_sections, alert: 'Error Message Here'
+      		redirect_to course_sections, alert: 'Error Message Here'
     	end
       end
   	end
