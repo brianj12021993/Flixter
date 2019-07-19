@@ -21,7 +21,7 @@
   <br class="clr" />
 
   <div class="text-center">
-     <%= link_to 'Add a new section...', new_instructor_course_section_path(current_course), class: 'btn btn-primary btn-lg' %>
+     <%= link_to 'Add a new section...', new_instructor_course_path(current_course), class: 'btn btn-primary btn-lg' %>
   </div>
 
     <ul class="sections">
@@ -62,10 +62,10 @@
 
 
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
-   Add a new section...
-</button>
+ <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
+      Add a new section...
+    </button>
 
 <!-- Modal -->
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
@@ -77,14 +77,13 @@
         </button>
            <h4 class="modal-title" id="newSectionModalLabel">Add a new section</h4>
       </div>
-      <%= simple_form_for @section, url: instructor_course_sections_path(current_course) do |f| %>
+      <%= simple_form_for @section, url: instructor_course_path(current_course) do |f| %>
       	<div class="modal-body">
         	<%= f.input :title %>
        		<br />
         	<%= f.submit "Add a section", class: 'btn btn-primary' %>
         	<br />
         	<br />
-      	<% end %>
       	</div>
       	<div class="modal-footer">
         	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
