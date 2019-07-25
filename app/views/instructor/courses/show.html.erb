@@ -60,42 +60,13 @@
 
 
 
- <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
-      Add a new section...
-    </button>
-
-<!-- Modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newSectionModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-           <h4 class="modal-title" id="newSectionModalLabel">Add a new section</h4>
-      </div>
-      <%= simple_form_for @lesson, url: "#", html: {id: 'newLessonForm' } do |f| %>
-      	<div class="modal-body">
-        	<%= f.input :title %>
-       		<br />
-        	<%= f.submit "Add a section", class: 'btn btn-primary' %>
-        	<br />
-        	<br />
-      	</div>
-      	<div class="modal-footer">
-        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        	<%= f.submit "Add a section", class: 'btn btn-primary' %>
-      	</div>
-      <% end %>
-    </div>
-  </div>
-</div>
+ 
 
 
  <!-- Button trigger modal -->
- 	<button type="button" class="btn btn-primary btn-lg float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal">
-        New Lesson...
+ <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#newLessonModal">
+  New Lesson...
+ 	
     </button>
 
 <!-- Modal -->
@@ -109,7 +80,7 @@
         </button>
         <h4 class="modal-title" id="newLessonModalLabel">Add a new lesson</h4>
       </div>
-      <%= simple_form_for @lesson, url: "#" do |f| %>
+      <%= simple_form_for @lesson, url: "#", html: {id: 'newLessonForm' } do |f| %>
          <div class="modal-body">
     			<%= f.input :title %>
     			<%= f.input :subtitle %>
