@@ -1,9 +1,13 @@
 <script>
    $(function() {
-         $('#newLessonForm').attr('action', lessonURL);
+      $('.new-lesson-button').click(function( event ) {
+        var lessonURL=  $(event.target).data('lesson-url');
+        $('#newLessonForm').attr('action', lessonURL);
+      console.log(lessonURL);
+      });
+
     });
 
-  });
 
   $(function() {
 
@@ -48,6 +52,7 @@
 
   <div class="text-center">
      <%= link_to 'Add a new section...', new_instructor_course_path(current_course), class: 'btn btn-primary btn-lg' %>
+
   </div>
 
   <br class="clr" />
@@ -58,7 +63,10 @@
     <ul class="sections">
     	<% current_course.sections.rank(:row_order).each do |section| %>
     		<li data-update-url="<%= instructor_section_path(section) %>" class="section-li">
-
+          <%= section.title %>
+          <button type="button" class="btn btn-primary btn-lg float-right new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
+              New Lesson...
+          </button>
           <br class="clr"/>
 
 	         	<ul class="lessons">
@@ -84,17 +92,14 @@
 	          	</ul>
 
       		</li>
-    	<% end %>
+    	 <% end %>
 
   	</ul>
   </div>
 
 
  <!-- Button trigger modal -->
- <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#newLessonModal">
-  New Lesson...
- 	
-    </button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="newLessonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
